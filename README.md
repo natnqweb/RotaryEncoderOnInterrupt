@@ -9,7 +9,7 @@ HEADER ONLY LIBRARY
 
 ``` c++
 #include <Arduino.h>
-#include "RotaryEncoder.h"
+#include "RotaryEncoderOnInterrupt.h"
 #define ENCODER_PIN_A 7
 #define ENCODER_PIN_B 3
 #define ENCODER2_PIN_A 8
@@ -37,7 +37,7 @@ void loop() {
 
 ``` c++
 #include <Arduino.h>
-#include "RotaryEncoder.h"
+#include "RotaryEncoderOnInterrupt.h"
 #define ENCODER1_PIN_A 41
 #define ENCODER1_PIN_B 3
 #define ENCODER2_PIN_A 40
