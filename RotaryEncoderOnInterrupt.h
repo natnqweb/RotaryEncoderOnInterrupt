@@ -1,9 +1,9 @@
 #pragma once
 
-static void _f_s_EmptyFunc_(){}
+static void REOI_f_s_EmptyFunc_(){}
 
 #define REOI_CREATE_ENCODER(NAME, PIN_A, PIN_B) \
-static t_rotary_encoder NAME{PIN_A, PIN_B}; \
+static REOI_t_rotary_encoder NAME{PIN_A, PIN_B}; \
 static void REOI_RisingFunc_##NAME() { \
   if (digitalRead(NAME._a)) { \
     NAME.pulses++; \
@@ -28,11 +28,11 @@ REOI_INIT_INTERRUPTS(NAME)
 #define REOI_GET_PULSES(NAME) \
 NAME.pulses
 
-using f_rising = void(*)();
-class t_rotary_encoder {
+using REOI_f_rising = void(*)();
+class REOI_t_rotary_encoder {
   public:
     int _a, _b;
-    explicit t_rotary_encoder(int a, int b) : _a{a}, _b{b} {};
+    explicit REOI_t_rotary_encoder(int a, int b) : _a{a}, _b{b} {};
     volatile long pulses{0};
-    f_rising fnc{_f_s_EmptyFunc_};
+    REOI_f_rising fnc{REOI_f_s_EmptyFunc_};
 };
